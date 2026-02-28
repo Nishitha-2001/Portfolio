@@ -20,7 +20,7 @@ const About = () => {
                         <div className="lg:col-span-5">
                             <h2 className="text-sm font-display tracking-[0.4em] uppercase text-moss mb-6 font-black">Subject Information</h2>
                             <h3 className="text-5xl md:text-7xl font-serif italic text-forest leading-none mb-10">
-                                Bridging Logic <br /> \u0026 <span className="text-mint">Security</span>.
+                                Architecting <br /> Digital <span className="text-mint">Excellence</span>.
                             </h3>
                             <div className="w-20 h-20 border-l-2 border-b-2 border-mint/20 relative">
                                 <div className="absolute top-0 right-0 w-2 h-2 bg-moss" />

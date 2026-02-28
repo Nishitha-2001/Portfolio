@@ -3,9 +3,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-emerald-950: #022c22;
-  --color-emerald-900: #064e3b;
-  --color-emerald-800: #065f46;
+  --color-emerald-950: #0a1f1c;
+  --color-emerald-900: #12332e;
+  --color-emerald-800: #1a4d45;
 
   --color-gold: #d4af37;
   --color-gold-light: #f1cc7a;
@@ -68,7 +68,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #022c22;
+  background: #0a1f1c;
 }
 
 ::-webkit-scrollbar-thumb {

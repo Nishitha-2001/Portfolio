@@ -8,9 +8,9 @@ export default {
         extend: {
             colors: {
                 emerald: {
-                    950: '#022c22',
-                    900: '#064e3b',
-                    800: '#065f46',
+                    950: '#0a1f1c',
+                    900: '#12332e',
+                    800: '#1a4d45',
                 },
                 gold: {
                     DEFAULT: '#d4af37',

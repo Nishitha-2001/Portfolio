@@ -40,55 +40,54 @@ const experienceData = [
 
 const Experience = () => {
     return (
-        <section id="experience" className="section-padding bg-sage-50">
-            <div className="max-w-6xl mx-auto">
+        <section id="experience" className="section-divider bg-sage-50/30">
+            <div className="max-w-6xl mx-auto px-6 lg:px-0">
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-20"
+                    className="mb-24"
                 >
-                    <h2 className="text-sm font-sans tracking-[0.3em] uppercase text-moss mb-4 font-bold">Field Experience</h2>
-                    <h3 className="text-4xl font-serif italic text-forest">Professional Trajectory</h3>
+                    <h2 className="text-sm font-display tracking-[0.5em] uppercase text-moss mb-4 font-black">History Log</h2>
+                    <h3 className="text-5xl font-serif italic text-forest">Professional Trajectory</h3>
+                    <div className="w-24 h-px bg-mint mt-6" />
                 </motion.div>
 
-                <div className="space-y-12">
+                <div className="space-y-16">
                     {experienceData.map((exp, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: idx * 0.1 }}
-                            className="glass-panel p-8 md:p-12 border-forest/5 hover:border-moss/20 transition-all duration-500"
+                            transition={{ duration: 0.8, delay: idx * 0.1 }}
+                            className="futuristic-card group"
                         >
-                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-                                <div>
-                                    <div className="flex items-center gap-2 text-moss mb-2">
-                                        <Briefcase className="w-4 h-4" />
-                                        <span className="text-xs tracking-widest uppercase font-bold">{exp.company}</span>
+                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-lg bg-forest/5 flex items-center justify-center text-moss group-hover:bg-mint/10 group-hover:text-mint transition-all">
+                                            <Briefcase className="w-5 h-5" />
+                                        </div>
+                                        <span className="text-[10px] tracking-[0.3em] uppercase font-black text-moss/50">{exp.company}</span>
                                     </div>
-                                    <h4 className="text-2xl md:text-3xl font-serif text-forest font-bold">{exp.role}</h4>
+                                    <h4 className="text-3xl md:text-4xl font-display font-medium text-forest group-hover:translate-x-2 transition-transform duration-500">{exp.role}</h4>
+
+                                    <div className="flex gap-8 text-[10px] tracking-widest text-forest/40 uppercase font-bold pt-4">
+                                        <span className="flex items-center gap-2"><Calendar className="w-3 h-3 text-mint" /> {exp.period}</span>
+                                        <span className="flex items-center gap-2"><MapPin className="w-3 h-3 text-mint" /> {exp.location}</span>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col md:items-end gap-2 text-forest/50 text-sm font-medium">
-                                    <span className="flex items-center gap-2">
-                                        <Calendar className="w-4 h-4" />
-                                        {exp.period}
-                                    </span>
-                                    <span className="flex items-center gap-2">
-                                        <MapPin className="w-4 h-4" />
-                                        {exp.location}
-                                    </span>
-                                </div>
+
+                                <ul className="flex-1 grid grid-cols-1 gap-4 border-l border-forest/5 pl-10">
+                                    {exp.details.map((detail, dIdx) => (
+                                        <li key={dIdx} className="text-forest/60 text-sm leading-relaxed font-light relative">
+                                            <div className="absolute -left-[45px] top-2 w-2 h-2 rounded-full bg-mint/20 group-hover:bg-mint group-hover:animate-pulse transition-all" />
+                                            {detail}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {exp.details.map((detail, dIdx) => (
-                                    <li key={dIdx} className="flex gap-4 text-forest/70 leading-relaxed font-light">
-                                        <div className="mt-2 w-1.5 h-1.5 rounded-full bg-moss shrink-0" />
-                                        {detail}
-                                    </li>
-                                ))}
-                            </ul>
                         </motion.div>
                     ))}
                 </div>

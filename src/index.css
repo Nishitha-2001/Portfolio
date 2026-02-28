@@ -17,14 +17,20 @@
   --color-moss: #4a6741;
   --color-moss-light: #6b8a60;
 
+  --color-mint: #00ffcc;
   --color-charcoal: #2d3436;
   --color-cream: #fdfcf8;
 
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-mesh: mesh 15s ease infinite;
+
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --shadow-glow: 0 0 20px rgba(0, 255, 204, 0.3);
 
   @keyframes float {
 
@@ -49,15 +55,46 @@
       transform: translateY(0px);
     }
   }
+
+  @keyframes mesh {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
 }
 
 body {
-  @apply bg-sage-100 text-forest font-sans antialiased selection:bg-forest selection:text-sage-50;
+  @apply bg-sage-50 text-forest font-sans antialiased selection:bg-forest selection:text-sage-50;
   overflow-x: hidden;
 }
 
+.mesh-gradient {
+  background: linear-gradient(-45deg, #f0f7f4, #e1ede8, #f7faf9, #c5d9d1);
+  background-size: 400% 400%;
+  animation: mesh 15s ease infinite;
+}
+
 .glass-panel {
-  @apply bg-white/40 backdrop-blur-md border border-white/40 rounded-2xl shadow-sm;
+  @apply bg-white/40 backdrop-blur-xl border border-white/50 rounded-2xl shadow-glass;
+}
+
+.glow-border {
+  @apply border border-mint/20 hover:border-mint/50 transition-all duration-500 hover:shadow-glow;
+}
+
+.section-divider {
+  @apply relative py-32;
+}
+
+.section-divider::before {
+  content: '';
+  @apply absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-moss/20 to-transparent;
 }
 
 .gradient-text {
@@ -70,7 +107,7 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -78,8 +115,9 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(27, 48, 34, 0.2);
+  background: rgba(27, 48, 34, 0.1);
   border-radius: 9999px;
+  @apply hover:bg-moss/30 transition-colors;
 }
 
 /* Smooth Scrolling */

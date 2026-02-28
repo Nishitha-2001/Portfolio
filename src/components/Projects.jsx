@@ -25,19 +25,24 @@ const projectsData = [
 
 const Projects = () => {
     return (
-        <section id="projects" className="section-padding bg-sage-100">
-            <div className="max-w-6xl mx-auto">
+        <section id="projects" className="section-divider bg-white">
+            <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="text-center mb-20"
+                    className="flex flex-col md:flex-row md:items-end justify-between mb-24 border-b border-forest/5 pb-12"
                 >
-                    <h2 className="text-sm font-sans tracking-[0.3em] uppercase text-moss mb-4 font-bold">Showcase</h2>
-                    <h3 className="text-4xl font-serif italic text-forest">Technical Creations</h3>
+                    <div>
+                        <h2 className="text-sm font-display tracking-[0.6em] uppercase text-moss mb-6 font-black">Archive</h2>
+                        <h3 className="text-5xl font-serif italic text-forest">Technical Creations</h3>
+                    </div>
+                    <div className="mt-8 md:mt-0">
+                        <p className="text-xs tracking-widest text-forest/40 max-w-xs font-medium">Selected deployments exploring the boundaries of Java and frontend frameworks.</p>
+                    </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {projectsData.map((project, idx) => (
                         <motion.div
                             key={idx}
@@ -45,18 +50,25 @@ const Projects = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: idx * 0.1 }}
-                            className="glass-panel p-8 flex flex-col h-full border-forest/5 hover:border-moss/20 transition-all duration-500"
+                            className="futuristic-card group flex flex-col h-full bg-sage-50/20"
                         >
-                            <div className="w-12 h-12 rounded-xl bg-forest/5 flex items-center justify-center text-moss mb-8">
+                            <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <ExternalLink className="w-4 h-4 text-mint" />
+                            </div>
+
+                            <div className="w-14 h-14 rounded-2xl bg-forest text-sage-50 flex items-center justify-center mb-8 shadow-lg group-hover:bg-mint group-hover:text-forest transition-all duration-500 shadow-mint/10">
                                 {project.icon}
                             </div>
-                            <h4 className="text-2xl font-serif text-forest mb-4 font-bold">{project.title}</h4>
-                            <p className="text-forest/60 text-base font-light leading-relaxed mb-auto">
-                                {project.description}
+
+                            <h4 className="text-2xl font-serif text-forest mb-6 font-bold">{project.title}</h4>
+                            <p className="text-forest/70 text-base font-light leading-relaxed mb-auto italic">
+                                "{project.description}"
                             </p>
-                            <div className="mt-8 pt-6 border-t border-forest/5 flex flex-wrap gap-2">
+
+                            <div className="mt-12 flex flex-wrap gap-4">
                                 {project.tech.map((t, i) => (
-                                    <span key={i} className="text-[10px] tracking-widest uppercase font-bold text-moss bg-moss/5 px-3 py-1 rounded-full">
+                                    <span key={i} className="text-[9px] tracking-[0.2em] font-black uppercase text-moss/60 py-1 flex items-center gap-2">
+                                        <div className="w-1 h-1 rounded-full bg-mint" />
                                         {t}
                                     </span>
                                 ))}

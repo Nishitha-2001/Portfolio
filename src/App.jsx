@@ -6,6 +6,7 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import ContactForm from './components/ContactForm';
+import ScrollToTop from './components/ScrollToTop';
 
 const FuturisticFooter = () => (
   <footer className="py-32 border-t border-forest/5 text-center bg-white relative overflow-hidden">
@@ -42,6 +43,7 @@ function App() {
       </div>
 
       <ContactForm />
+      <ScrollToTop />
     </main>
   );
 }

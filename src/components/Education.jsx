@@ -3,28 +3,28 @@ import { motion } from 'framer-motion';
 
 const educationData = [
     {
-        year: "2018 - 2020",
-        degree: "Master of Strategic Design",
-        institution: "London College of Creative Arts",
-        description: "Specialized in luxury brand management and digital experience design."
+        year: "2018 - 2022",
+        degree: "B. Tech in Electronics and Communication Engineering",
+        institution: "JNTU (Affiliated)",
+        description: "Focus on circuit design, signals \u0026 systems, and embedded logic."
     },
     {
-        year: "2014 - 2018",
-        degree: "Bachelor of Visual Arts",
-        institution: "National Institute of Design",
-        description: "Focus on human-centered design and visual storytelling."
+        year: "2016 - 2018",
+        degree: "Intermediate (MPC)",
+        institution: "Board of Intermediate Education",
+        description: "Excellence in Mathematics, Physics, and Chemistry."
     },
     {
-        year: "2012 - 2014",
-        degree: "Pre-University Certification",
-        institution: "St. Xavier's Academy",
-        description: "Excellence in Humanities and Arts."
+        year: "2015 - 2016",
+        degree: "Matriculation (SSC)",
+        institution: "Secondary School Certificate Board",
+        description: "Foundation in science, technology, and mathematics."
     }
 ];
 
 const Education = () => {
     return (
-        <section id="education" className="section-padding relative bg-emerald-900/10">
+        <section id="education" className="section-padding relative bg-sage-200/50">
             <div className="max-w-4xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -32,8 +32,8 @@ const Education = () => {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-sm font-sans tracking-[0.3em] uppercase text-gold mb-4">Academic Journey</h2>
-                    <h3 className="text-4xl font-serif italic text-champagne">The Foundation of Excellence</h3>
+                    <h2 className="text-sm font-sans tracking-[0.3em] uppercase text-moss mb-4 font-bold">Academic Milestone</h2>
+                    <h3 className="text-4xl font-serif italic text-forest">The Foundation of Learning</h3>
                 </motion.div>
 
                 <div className="relative">
@@ -51,14 +51,14 @@ const Education = () => {
                                 className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
                             >
                                 {/* Glowing Dot */}
-                                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-10" />
+                                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-moss shadow-[0_0_15px_rgba(74,103,65,0.4)] z-10" />
 
                                 {/* Content */}
                                 <div className={`w-full md:w-5/12 ml-10 md:ml-0 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:pl-12'}`}>
-                                    <span className="text-gold font-serif italic text-lg">{item.year}</span>
-                                    <h4 className="text-xl font-sans font-semibold text-champagne mt-2">{item.degree}</h4>
-                                    <p className="text-gold/60 text-sm tracking-widest mt-1">{item.institution}</p>
-                                    <p className="text-champagne/50 text-base mt-4 font-light leading-relaxed">
+                                    <span className="text-moss font-serif italic text-lg font-bold">{item.year}</span>
+                                    <h4 className="text-xl font-sans font-bold text-forest mt-2">{item.degree}</h4>
+                                    <p className="text-forest-light/60 text-sm tracking-widest mt-1 font-medium">{item.institution}</p>
+                                    <p className="text-forest/60 text-base mt-4 font-light leading-relaxed">
                                         {item.description}
                                     </p>
                                 </div>

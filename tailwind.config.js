@@ -7,20 +7,25 @@ export default {
     theme: {
         extend: {
             colors: {
-                emerald: {
-                    950: '#0a1f1c',
-                    900: '#12332e',
-                    800: '#1a4d45',
+                sage: {
+                    50: '#f7faf9',
+                    100: '#f0f7f4',
+                    200: '#e1ede8',
+                    300: '#c5d9d1',
+                    400: '#9dbbb0',
+                    500: '#799f91',
                 },
-                gold: {
-                    DEFAULT: '#d4af37',
-                    light: '#f1cc7a',
-                    dark: '#b8860b',
+                forest: {
+                    DEFAULT: '#1b3022',
+                    light: '#2c4d37',
+                    dark: '#0e1a12',
                 },
-                champagne: {
-                    DEFAULT: '#fdf6e3',
-                    light: '#fffcf5',
-                }
+                moss: {
+                    DEFAULT: '#4a6741',
+                    light: '#6b8a60',
+                },
+                charcoal: '#2d3436',
+                cream: '#fdfcf8',
             },
             fontFamily: {
                 serif: ['"Playfair Display"', 'serif'],

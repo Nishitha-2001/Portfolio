@@ -3,16 +3,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-emerald-950: #0a1f1c;
-  --color-emerald-900: #12332e;
-  --color-emerald-800: #1a4d45;
+  --color-sage-50: #f7faf9;
+  --color-sage-100: #f0f7f4;
+  --color-sage-200: #e1ede8;
+  --color-sage-300: #c5d9d1;
+  --color-sage-400: #9dbbb0;
+  --color-sage-500: #799f91;
 
-  --color-gold: #d4af37;
-  --color-gold-light: #f1cc7a;
-  --color-gold-dark: #b8860b;
+  --color-forest: #1b3022;
+  --color-forest-light: #2c4d37;
+  --color-forest-dark: #0e1a12;
 
-  --color-champagne: #fdf6e3;
-  --color-champagne-light: #fffcf5;
+  --color-moss: #4a6741;
+  --color-moss-light: #6b8a60;
+
+  --color-charcoal: #2d3436;
+  --color-cream: #fdfcf8;
 
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
@@ -46,16 +52,16 @@
 }
 
 body {
-  @apply bg-emerald-950 text-champagne font-sans antialiased selection:bg-gold selection:text-emerald-950;
+  @apply bg-sage-100 text-forest font-sans antialiased selection:bg-forest selection:text-sage-50;
   overflow-x: hidden;
 }
 
 .glass-panel {
-  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  @apply bg-white/40 backdrop-blur-md border border-white/40 rounded-2xl shadow-sm;
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold via-gold-light to-gold;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-forest via-moss to-forest;
 }
 
 .section-padding {
@@ -68,11 +74,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a1f1c;
+  background: #f0f7f4;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.2);
+  background: rgba(27, 48, 34, 0.2);
   border-radius: 9999px;
 }
 

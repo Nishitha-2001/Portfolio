@@ -36,7 +36,7 @@ const Hero = () => {
                         transition={{ duration: 1, delay: 0.8 }}
                         className="text-lg md:text-2xl font-sans tracking-[0.5em] uppercase text-forest-light mb-16 font-medium"
                     >
-                        IAM Consultant & B.Tech Graduate
+                        Software Engineer & B.Tech Graduate
                     </motion.h2>
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-12">

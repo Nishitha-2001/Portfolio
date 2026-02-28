@@ -35,17 +35,17 @@ const About = () => {
                                     Executive Summary
                                 </p>
                                 <p className="text-xl md:text-2xl text-forest/80 font-display font-light leading-relaxed mb-6">
-                                    B.Tech graduate in Electronics and Communication Engineering with specialized expertise in <span className="font-bold text-forest underline decoration-mint/40 underline-offset-8">Java, ReactJS, and IAM (Auth0)</span> protocols.
+                                    B.Tech graduate in Electronics and Communication Engineering with specialized expertise in <span className="font-bold text-forest underline decoration-mint/40 underline-offset-8">Software Engineering, Full-Stack Development, and Secure Authentication</span>.
                                 </p>
                                 <p className="text-forest/60 leading-relaxed font-light">
-                                    My path has been defined by a deep curiosity for how systems interact—from the intricate hardware logic of ECE to the secure authentication flows of Identity and Access Management (IAM). Whether building SSO applications with Spring Boot or crafting intuitive frontend experiences, I strive for precision.
+                                    My path has been defined by a deep curiosity for how systems interact—from the intricate hardware logic of ECE to building robust, scalable software architectures. Whether crafting intuitive frontend experiences or engineering secure backend systems, I strive for precision and excellence.
                                 </p>
                             </div>
 
                             <div className="grid grid-cols-2 gap-8">
                                 <div className="p-8 glass-panel border-moss/5 hover:border-mint/20 transition-all duration-500">
-                                    <p className="text-3xl font-serif text-forest font-black mb-2 italic">IAM</p>
-                                    <p className="text-[10px] tracking-widest uppercase text-moss font-bold">Auth Intelligence</p>
+                                    <p className="text-3xl font-serif text-forest font-black mb-2 italic">JAVA</p>
+                                    <p className="text-[10px] tracking-widest uppercase text-moss font-bold">Backend Engineering</p>
                                 </div>
                                 <div className="p-8 glass-panel border-moss/5 hover:border-mint/20 transition-all duration-500">
                                     <p className="text-3xl font-serif text-forest font-black mb-2 italic">FULL</p>

@@ -3,66 +3,67 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-gradient">
-            {/* Futuristic Animated Elements */}
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-mint/10 blur-[100px] rounded-full animate-pulse-slow active" />
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-moss/10 blur-[120px] rounded-full animate-float" />
-
-            {/* Floating Geometric Decoration */}
-            <div className="absolute top-20 right-20 w-32 h-32 border border-forest/5 rounded-full animate-spin-slow opacity-20" />
-            <div className="absolute bottom-40 left-10 w-48 h-px bg-gradient-to-r from-transparent via-mint/30 to-transparent rotate-45" />
-
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
             <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="relative z-10 glass-panel p-12 md:p-24 border-white/20 max-w-5xl mx-6 shadow-2xl"
+                className="relative z-10 text-center px-6"
             >
-                <div className="text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                    >
-                        <h1 className="text-6xl md:text-9xl font-display font-black tracking-tighter text-forest mb-6 uppercase leading-none">
-                            Nishitha <span className="text-transparent bg-clip-text bg-gradient-to-r from-forest via-moss to-mint">Ravula</span>
-                        </h1>
-                        <div className="w-40 h-1 bg-gradient-to-r from-transparent via-moss/40 to-transparent mx-auto mb-10" />
-                    </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1.2, delay: 0.2 }}
+                    className="mb-8"
+                >
+                    <span className="text-gold-rich text-[10px] tracking-[0.8em] uppercase font-bold mb-4 block">Software Engineer Specialist</span>
+                    <h1 className="text-7xl md:text-9xl font-serif text-emerald-deep leading-[0.9] italic relative inline-block">
+                        Nishitha
+                        <br />
+                        <span className="not-italic font-black text-transparent bg-clip-text bg-gradient-to-br from-emerald-rich via-gold-rich to-emerald-rich">Ravula</span>
+                    </h1>
+                </motion.div>
 
-                    <motion.h2
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.8 }}
-                        className="text-lg md:text-2xl font-sans tracking-[0.5em] uppercase text-forest-light mb-16 font-medium flex flex-col gap-2"
-                    >
-                        <span>Software Engineer</span>
-                        <span>B.Tech Graduate</span>
-                    </motion.h2>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.8 }}
+                    className="max-w-xl mx-auto mb-16"
+                >
+                    <p className="text-emerald-rich/60 text-lg md:text-xl font-light italic leading-relaxed">
+                        "Crafting high-integrity software solutions with a focus on Java backend excellence and modern architectural patterns."
+                    </p>
+                </motion.div>
 
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-                        {[
-                            { label: "Phone", val: "8688565093" },
-                            { label: "Email", val: "pnishitha03@gmail.com" },
-                            { label: "Region", val: "Hyderabad, TS" }
-                        ].map((item, i) => (
-                            <div key={i} className="group cursor-default">
-                                <p className="text-[10px] tracking-[0.4em] uppercase text-moss mb-2 opacity-50 font-bold">{item.label}</p>
-                                <p className="text-xs tracking-widest text-forest font-black group-hover:text-mint transition-colors duration-300">{item.val}</p>
-                            </div>
-                        ))}
-                    </div>
+                <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+                    {[
+                        { label: "Direct", val: "8688565093" },
+                        { label: "Message", val: "pnishitha03@gmail.com" },
+                        { label: "Location", val: "Hyderabad, TS" }
+                    ].map((item, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 1 + (i * 0.1) }}
+                            className="text-left border-l border-gold-rich/20 pl-4"
+                        >
+                            <p className="text-[9px] tracking-[0.3em] uppercase text-gold-muted mb-1 font-bold">{item.label}</p>
+                            <p className="text-xs tracking-wider text-emerald-deep font-medium hover:text-gold-rich transition-colors duration-300 cursor-default">{item.val}</p>
+                        </motion.div>
+                    ))}
                 </div>
             </motion.div>
 
+            {/* Scroll Indicator */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center"
+                transition={{ delay: 2, duration: 1 }}
+                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
             >
-                <p className="text-[10px] tracking-[0.6em] uppercase text-forest/30 mb-6 font-black">Initiate Sequence</p>
-                <div className="w-px h-16 bg-gradient-to-b from-mint/40 via-moss/20 to-transparent mx-auto animate-pulse" />
+                <div className="w-[1px] h-12 bg-gradient-to-b from-gold-rich/40 to-transparent" />
+                <span className="text-[8px] tracking-[0.6em] uppercase text-emerald-rich/40 mt-4">Discover Path</span>
             </motion.div>
         </section>
     );

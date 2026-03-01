@@ -6,18 +6,16 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import ContactForm from './components/ContactForm';
+import Background from './components/Background';
 import ScrollToTop from './components/ScrollToTop';
 
 const FuturisticFooter = () => (
-  <footer className="py-32 border-t border-forest/5 text-center bg-white relative overflow-hidden">
-    {/* Refractive Light Effect */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-mint to-transparent opacity-30" />
-
+  <footer className="py-32 border-t border-emerald-deep/5 text-center bg-transparent relative overflow-hidden">
     <div className="relative z-10 space-y-8">
-      <h4 className="text-6xl md:text-9xl font-display font-black text-forest/5 tracking-tighter uppercase whitespace-nowrap overflow-hidden">Integrated Systems</h4>
+      <h4 className="text-6xl md:text-9xl font-serif font-black text-emerald-deep/5 tracking-tighter uppercase whitespace-nowrap overflow-hidden">Nishitha Ravula</h4>
       <div className="space-y-4">
-        <p className="text-forest/30 text-[10px] tracking-[0.6em] uppercase font-black">Nishitha Ravula • Digital Archive v2.0</p>
-        <p className="text-moss/40 text-[9px] tracking-widest uppercase">Encryption Standard • SEC-256-BIT • © 2026</p>
+        <p className="text-emerald-rich/40 text-[10px] tracking-[0.6em] uppercase font-bold">Designer • Developer • Creator</p>
+        <p className="text-emerald-soft/30 text-[9px] tracking-widest uppercase">© 2026 • Premium Portfolio v3.0</p>
       </div>
     </div>
   </footer>
@@ -25,12 +23,8 @@ const FuturisticFooter = () => (
 
 function App() {
   return (
-    <main className="relative min-h-screen bg-sage-50 overflow-x-hidden selection:bg-mint selection:text-forest font-sans">
-      {/* Dynamic Global Atmosphere */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(0,255,204,0.03)_0%,transparent_50%)]" />
-        <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(74,103,65,0.02)_0%,transparent_50%)]" />
-      </div>
+    <main className="relative min-h-screen selection:bg-gold-champagne selection:text-emerald-deep font-sans">
+      <Background />
 
       <div className="relative z-10">
         <Hero />

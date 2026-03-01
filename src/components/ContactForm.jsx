@@ -9,17 +9,6 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Mock saving logic
-        console.log("Saving to Git (Mock):", formData);
-
-        // In reality, this would trigger an API or download
-        const blob = new Blob([JSON.stringify(formData, null, 2)], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `contact_${Date.now()}.json`;
-        // link.click(); // Optional auto-download
-
         setSubmitted(true);
         setTimeout(() => {
             setSubmitted(false);
@@ -36,84 +25,85 @@ const ContactForm = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="absolute bottom-20 right-0 w-80 md:w-96 glass-panel overflow-hidden border-mint/30 shadow-2xl"
+                        className="absolute bottom-20 right-0 w-80 md:w-96 glass-card border-gold-rich/20 overflow-hidden shadow-2xl p-8"
                     >
                         {submitted ? (
-                            <div className="p-12 text-center">
-                                <div className="w-16 h-16 bg-mint/10 text-mint rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <CheckCircle className="w-8 h-8" />
-                                </div>
-                                <h4 className="text-forest font-display font-bold text-xl mb-2">Transmission Received</h4>
-                                <p className="text-forest/60 text-sm">Data encrypted \u0026 logged successfully.</p>
+                            <div className="py-12 text-center">
+                                <motion.div
+                                    initial={{ scale: 0.5, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    className="w-20 h-20 bg-emerald-deep text-gold-rich rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl"
+                                >
+                                    <CheckCircle className="w-10 h-10" />
+                                </motion.div>
+                                <h4 className="text-emerald-deep font-serif font-black text-2xl mb-2 italic">Message Received</h4>
+                                <p className="text-emerald-rich/60 text-sm font-light">I'll get back to you shortly.</p>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="p-8">
-                                <div className="flex items-center justify-between mb-8">
+                            <form onSubmit={handleSubmit} className="space-y-6">
+                                <div className="flex items-center justify-between mb-4">
                                     <div>
-                                        <h4 className="text-forest font-display font-bold text-lg">Direct Channel</h4>
-                                        <p className="text-[10px] tracking-widest text-moss uppercase font-bold">Secure Communication</p>
+                                        <h4 className="text-emerald-deep font-serif font-black text-2xl italic">Direct Line</h4>
+                                        <p className="text-[9px] tracking-[0.4em] text-gold-rich uppercase font-bold">Secure Gateway</p>
                                     </div>
                                     <button
                                         type="button"
                                         onClick={() => setIsOpen(false)}
-                                        className="text-forest/30 hover:text-forest transition-colors"
+                                        className="text-emerald-deep/30 hover:text-gold-rich transition-colors"
                                     >
-                                        <X className="w-5 h-5" />
+                                        <X className="w-6 h-6" />
                                     </button>
                                 </div>
 
-                                <div className="space-y-4">
-                                    <div>
-                                        <input
-                                            required
-                                            type="text"
-                                            placeholder="IDENTIFIER (NAME)"
-                                            className="w-full bg-forest/5 border border-forest/5 p-4 text-xs font-bold tracking-widest text-forest placeholder:text-forest/20 focus:outline-none focus:border-mint/30 transition-all"
-                                            value={formData.name}
-                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        />
-                                    </div>
-                                    <div>
-                                        <input
-                                            required
-                                            type="email"
-                                            placeholder="TERMINAL (EMAIL)"
-                                            className="w-full bg-forest/5 border border-forest/5 p-4 text-xs font-bold tracking-widest text-forest placeholder:text-forest/20 focus:outline-none focus:border-mint/30 transition-all"
-                                            value={formData.email}
-                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        />
-                                    </div>
-                                    <div>
-                                        <textarea
-                                            required
-                                            rows="4"
-                                            placeholder="PAYLOAD (MESSAGE)"
-                                            className="w-full bg-forest/5 border border-forest/5 p-4 text-xs font-bold tracking-widest text-forest placeholder:text-forest/20 focus:outline-none focus:border-mint/30 transition-all resize-none"
-                                            value={formData.message}
-                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                        />
-                                    </div>
+                                <div className="space-y-6">
+                                    {['name', 'email', 'message'].map((field) => (
+                                        <div key={field}>
+                                            {field === 'message' ? (
+                                                <textarea
+                                                    required
+                                                    rows="4"
+                                                    placeholder={field.toUpperCase()}
+                                                    className="w-full bg-emerald-deep/5 border border-emerald-deep/10 p-5 text-[11px] font-bold tracking-widest text-emerald-deep placeholder:text-emerald-deep/20 focus:outline-none focus:border-gold-rich/40 transition-all resize-none rounded-2xl"
+                                                    value={formData[field]}
+                                                    onChange={(e) => setFormData({ ...formData, [field]: e.target.value })}
+                                                />
+                                            ) : (
+                                                <input
+                                                    required
+                                                    type={field === 'email' ? 'email' : 'text'}
+                                                    placeholder={field.toUpperCase()}
+                                                    className="w-full bg-emerald-deep/5 border border-emerald-deep/10 p-5 text-[11px] font-bold tracking-widest text-emerald-deep placeholder:text-emerald-deep/20 focus:outline-none focus:border-gold-rich/40 transition-all rounded-2xl"
+                                                    value={formData[field]}
+                                                    onChange={(e) => setFormData({ ...formData, [field]: e.target.value })}
+                                                />
+                                            )}
+                                        </div>
+                                    ))}
                                 </div>
 
-                                <button
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
                                     type="submit"
-                                    className="w-full mt-8 bg-forest text-sage-50 p-4 text-[10px] tracking-[0.4em] uppercase font-black hover:bg-mint hover:text-forest transition-all duration-500 flex items-center justify-center gap-4 group"
+                                    className="w-full py-5 bg-emerald-deep text-gold-champagne text-[11px] tracking-[0.5em] uppercase font-bold hover:bg-gold-rich hover:text-emerald-deep transition-all duration-500 flex items-center justify-center gap-4 rounded-2xl shadow-xl shadow-emerald-deep/10"
                                 >
-                                    Transmit Package
-                                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </button>
+                                    Send Connection
+                                    <Send className="w-4 h-4" />
+                                </motion.button>
                             </form>
                         )}
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            <button
+            <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 shadow-xl ${isOpen ? 'bg-forest rotate-90' : 'bg-mint hover:scale-110'}`}
+                className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500 shadow-2xl ${isOpen ? 'bg-emerald-deep' : 'bg-gold-rich'}`}
             >
-                {isOpen ? <X className="text-sage-50 w-6 h-6" /> : <MessageSquare className="text-forest w-6 h-6" />}
-            </button>
+                {isOpen ? <X className="text-gold-champagne w-7 h-7" /> : <MessageSquare className="text-emerald-deep w-7 h-7" />}
+            </motion.button>
         </div>
     );
 };

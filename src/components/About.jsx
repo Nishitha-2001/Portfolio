@@ -3,53 +3,51 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <section id="about" className="section-divider bg-white relative overflow-hidden">
-            {/* Neon Scanning Lines */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-mint to-transparent opacity-10 animate-pulse" />
-
+        <section id="about" className="relative overflow-hidden py-32">
             <div className="section-padding relative z-10">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="max-w-7xl mx-auto"
                 >
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
                         {/* Title Section */}
                         <div className="lg:col-span-5">
-                            <h2 className="text-sm font-display tracking-[0.4em] uppercase text-moss mb-6 font-black">Subject Information</h2>
-                            <h3 className="text-5xl md:text-7xl font-serif italic text-forest leading-none mb-10">
-                                Architecting <br /> Digital <span className="text-mint">Excellence</span>.
+                            <motion.p
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                className="text-[10px] tracking-[0.5em] uppercase text-gold-rich mb-6 font-bold"
+                            >
+                                Personal Narrative
+                            </motion.p>
+                            <h3 className="text-5xl md:text-7xl font-serif italic text-emerald-deep leading-tight mb-10">
+                                Architecting <br /> Software <span className="not-italic font-black text-luxury">Integrity</span>.
                             </h3>
-                            <div className="w-20 h-20 border-l-2 border-b-2 border-mint/20 relative">
-                                <div className="absolute top-0 right-0 w-2 h-2 bg-moss" />
-                            </div>
+                            <div className="w-24 h-[1px] bg-gold-rich/30" />
                         </div>
 
                         {/* Story Body */}
                         <div className="lg:col-span-7 space-y-12">
-                            <div className="futuristic-card">
-                                <p className="text-xs tracking-[0.3em] uppercase text-moss font-bold mb-4 flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-mint animate-ping" />
-                                    Executive Summary
+                            <div className="glass-card p-10 md:p-14 relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gold-rich/5 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-gold-rich/10 transition-colors" />
+
+                                <p className="text-xl md:text-2xl text-emerald-deep font-serif italic leading-relaxed mb-8">
+                                    B.Tech graduate in Electronics and Communication Engineering with specialized expertise in <span className="font-bold text-emerald-rich not-italic border-b-2 border-gold-rich/30">Java Backend Excellence and Scalable Systems</span>.
                                 </p>
-                                <p className="text-xl md:text-2xl text-forest/80 font-display font-light leading-relaxed mb-6">
-                                    B.Tech graduate in Electronics and Communication Engineering with specialized expertise in <span className="font-bold text-forest underline decoration-mint/40 underline-offset-8">Software Engineering, Full-Stack Development, and Secure Authentication</span>.
-                                </p>
-                                <p className="text-forest/60 leading-relaxed font-light">
-                                    My path has been defined by a deep curiosity for how systems interact—from the intricate hardware logic of ECE to building robust, scalable software architectures. Whether crafting intuitive frontend experiences or engineering secure backend systems, I strive for precision and excellence.
+                                <p className="text-emerald-rich/70 leading-relaxed font-light text-lg">
+                                    My journey is defined by the intersection of hardware precision and software scalability. I specialize in building high-integrity backend architectures that power seamless user experiences, ensuring every line of code contributes to a secure and efficient digital ecosystem.
                                 </p>
                             </div>
 
                             <div className="grid grid-cols-2 gap-8">
-                                <div className="p-8 glass-panel border-moss/5 hover:border-mint/20 transition-all duration-500">
-                                    <p className="text-3xl font-serif text-forest font-black mb-2 italic">JAVA</p>
-                                    <p className="text-[10px] tracking-widest uppercase text-moss font-bold">Backend Engineering</p>
+                                <div className="p-8 glass-card border-none bg-emerald-deep text-gold-champagne shadow-2xl">
+                                    <p className="text-3xl font-serif font-black mb-2 italic">JAVA</p>
+                                    <p className="text-[9px] tracking-widest uppercase text-gold-rich/80 font-bold">Backend Mastery</p>
                                 </div>
-                                <div className="p-8 glass-panel border-moss/5 hover:border-mint/20 transition-all duration-500">
-                                    <p className="text-3xl font-serif text-forest font-black mb-2 italic">FULL</p>
-                                    <p className="text-[10px] tracking-widest uppercase text-moss font-bold">Stack Architecture</p>
+                                <div className="p-8 glass-card border-none bg-white text-emerald-deep">
+                                    <p className="text-3xl font-serif font-black mb-2 italic">FULL</p>
+                                    <p className="text-[9px] tracking-widest uppercase text-gold-rich font-bold">Stack Vision</p>
                                 </div>
                             </div>
                         </div>
